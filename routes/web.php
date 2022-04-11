@@ -19,7 +19,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
+    ->name('home');
+Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])
+    ->middleware('is_admin')
+    ->name('admin.home');
 
 Route::middleware('auth')->group(function () {
     Route::view('about', 'about')->name('about');

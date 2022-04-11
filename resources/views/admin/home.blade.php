@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">{{ __('Dashboard') }}</h1>
+                    <h1 class="m-0">{{ __('Admin Dashboard') }}</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -21,15 +21,8 @@
                     <div class="card">
                         <div class="card-body">
                             <p class="card-text">
-                                {{ __('You are logged in as USER!') }}
+                                {{ __('You are logged in as ADMIN!') }}
                             </p>
-                        </div>
-                        <div class="card-footer">
-                            @if(request()->session()->has('error'))
-                                <div class="alert alert-danger" role="alert">
-                                    {{ session('error') }}
-                                </div>
-                            @endif
                         </div>
                         <div class="card-footer">
                             @if(request()->session()->has('message'))
